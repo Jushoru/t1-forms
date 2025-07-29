@@ -5,34 +5,35 @@ import {UserCreatePage} from "../pages/user-create/UserCreatePage.tsx";
 import {UserEditPage} from "../pages/user-edit/UserEditPage.tsx";
 import {Layout} from "../widgets/Layout/Layout.tsx";
 
-
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: (
+            <Layout/>
+        ),
         children: [
             {
                 index: true,
-                element: <MainPage/>,
-            },
-            {
-                path: 'login',
-                element: <LoginPage/>
+                element: <MainPage />,
             },
             {
                 path: 'user',
                 children: [
                     {
                         path: 'create',
-                        element: <UserCreatePage/>
+                        element: <UserCreatePage />
                     },
                     {
                         path: 'edit/:id',
-                        element: <UserEditPage/>
+                        element: <UserEditPage />
                     }
                 ]
             }
         ]
+    },
+    {
+        path: 'login',
+        element: <LoginPage />
     }
 ], {
     basename: '/t1-forms'
@@ -40,11 +41,9 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <>
-            <div className="flex flex-col flex-auto overflow-auto">
+            <div className="h-screen w-screen flex flex-col flex-auto overflow-auto">
                 <RouterProvider router={router}/>
             </div>
-        </>
     )
 }
 
