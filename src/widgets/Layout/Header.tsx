@@ -2,6 +2,7 @@ import { Logout } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import {API_URL} from "@/shared/api.ts";
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const Header = () => {
     const handleLogout = async () => {
         setIsLoggingOut(true);
         try {
-            await fetch('/api/v1/auth/logout', {
+            await fetch(`${API_URL}/api/v1/auth/logout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

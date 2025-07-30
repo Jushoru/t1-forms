@@ -47,7 +47,7 @@ export const Layout = () => {
             <Header />
             <div className="flex h-full">
                 <Sidebar />
-                <main className="flex flex-col flex-1">
+                <main className="flex flex-col flex-1 p-horizontal">
                     <Outlet />
                 </main>
             </div>

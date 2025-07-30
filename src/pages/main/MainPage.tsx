@@ -17,7 +17,6 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { API_URL } from '@/shared/api';
-import {userDelete} from "@/entities/user-delete.ts";
 
 interface User {
     id: string;
@@ -63,8 +62,26 @@ export const MainPage = () => {
         if (!window.confirm(`Вы точно уверены, что хотите удалить пользователя ${email}?`)) {
             return;
         }
-        setDeleteLoading(userId);
-        await userDelete(userId).finally(() => {setDeleteLoading(null);})
+
+        try {
+            setDeleteLoading(userId);
+
+            const response = await fetch(`${API_URL}/api/v1/users/${userId}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete user');
+            }
+
+            setUsers(users.filter(user => user.id !== userId));
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Failed to delete user');
+            setOpenSnackbar(true);
+        } finally {
+            setDeleteLoading(null);
+        }
     };
 
     const handleCloseSnackbar = () => {
@@ -72,7 +89,13 @@ export const MainPage = () => {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="fixed inset-0 flex items-center justify-center">
+            <img
+                src={`${import.meta.env.BASE_URL || ''}/loader.svg`}
+                alt="Loading..."
+                className="w-[150px]"
+            />
+        </div>;
     }
 
     return (
