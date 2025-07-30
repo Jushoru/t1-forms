@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 export const Sidebar = () => {
     return (
         <div className="flex flex-col w-[240px] bg-1">
-            <List>
+            <List sx={{paddingTop: "2rem"}}>
                 <ListItem disablePadding>
                     <ListItemButton component={Link} to="/">
                         <ListItemIcon>
