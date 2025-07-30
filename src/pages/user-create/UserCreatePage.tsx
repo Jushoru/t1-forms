@@ -16,7 +16,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { validationSchema } from "@/pages/user-create/UserCreateValidation.ts";
-import {employmentOptions, type FormValuesUi} from "@/pages/user-create/UserCreateTypes.ts";
+import {employmentOptions, type FormValuesUi} from "@/entities/user/UserTypes.ts";
 import {API_URL} from "@/shared/api.ts";
 
 export const UserCreatePage = () => {

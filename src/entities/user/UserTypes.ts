@@ -4,7 +4,7 @@ export interface FormValuesUi {
     password: string;
     fullName: string;
     email: string;
-    birthDate: string | null;
+    birthDate: string | null | Date;
     telephone: string;
     employment: string;
     userAgreement: boolean;
