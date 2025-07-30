@@ -1,14 +1,14 @@
 static_sites:
   - name: t1-forms
-    buildCommand: npm run build
+    buildCommand: |
+      npm install
+      npm run build
+      find dist -type f -exec sed -i 's/"text\/plain"/"text\/javascript"/g' {} \;
     publish: dist
     headers:
       - path: /assets/*
         name: Content-Type
         value: text/javascript
-      - path: /assets/*.css
+      - path: /*.css
         name: Content-Type
         value: text/css
-      - path: /*
-        name: X-Content-Type-Options
-        value: "nosniff"
