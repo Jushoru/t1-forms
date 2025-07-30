@@ -1,0 +1,14 @@
+static_sites:
+  - name: t1-forms
+    buildCommand: npm run build
+    publish: dist
+    headers:
+      - path: /*
+        name: Content-Type
+        value: text/javascript
+      - path: /*.css
+        name: Content-Type
+        value: text/css
+      - path: /*
+        name: X-Content-Type-Options
+        value: "nosniff"
