@@ -3,10 +3,10 @@ static_sites:
     buildCommand: npm run build
     publish: dist
     headers:
-      - path: /*
+      - path: /assets/*
         name: Content-Type
         value: text/javascript
-      - path: /*.css
+      - path: /assets/*.css
         name: Content-Type
         value: text/css
       - path: /*
