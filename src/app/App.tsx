@@ -35,9 +35,7 @@ const router = createBrowserRouter([
         path: 'login',
         element: <LoginPage />
     }
-], {
-    basename: '/t1-forms'
-});
+], { basename: import.meta.env.BASE_URL });
 
 function App() {
     return (
