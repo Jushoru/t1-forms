@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-            <div className="h-screen w-screen flex flex-col flex-auto overflow-auto">
+            <div className="h-screen w-screen min-w-[fit-content] flex flex-col flex-auto overflow-auto">
                 <RouterProvider router={router}/>
             </div>
     )
