@@ -52,7 +52,7 @@ export const UserEditPage = () => {
 
     if (!initialValues) return <div className="h-full flex items-center justify-center">
         <img
-            src={`${import.meta.env.BASE_URL || ''}/loader.svg`}
+            src="/loader.svg"
             alt="Loading..."
             className="w-[150px]"
         />

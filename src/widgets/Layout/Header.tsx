@@ -31,7 +31,7 @@ export const Header = () => {
         <header className="flex w-screen min-w-full bg-secondary py-vertical">
             <div className="flex justify-between items-center mx-horizontal w-full">
                 <div className="flex items-center">
-                    <img src={`${import.meta.env.BASE_URL}/logo.svg`} alt="logo" width="35" />
+                    <img src="/logo.svg" alt="logo" width="35" />
                     <span className="text-gh font-bold text-primary uppercase ml-3.5">
                         Формовочный цех
                     </span>

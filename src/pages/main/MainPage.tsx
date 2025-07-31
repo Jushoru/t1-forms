@@ -91,7 +91,7 @@ export const MainPage = () => {
     if (loading) {
         return <div className="fixed inset-0 flex items-center justify-center">
             <img
-                src={`${import.meta.env.BASE_URL || ''}/loader.svg`}
+                src="/loader.svg"
                 alt="Loading..."
                 className="w-[150px]"
             />

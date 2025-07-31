@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: 'login',
+        path: '/login',
         element: <LoginPage />
     }
 ], { basename: import.meta.env.BASE_URL });
